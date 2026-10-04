@@ -1,3 +1,7 @@
+:root {
+  --sage-light: #dfe8d8;
+}
+
 body {
   margin: 0;
 }
@@ -7,6 +11,7 @@ body {
   align-items: center;
   gap: 10px;
   padding: 16px 24px;
+  background-color: var(--sage-light);
 }
 
 .site-header img {

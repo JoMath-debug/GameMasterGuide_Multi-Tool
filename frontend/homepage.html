@@ -8,16 +8,25 @@
   <link rel="stylesheet" href="homepage.css" />
   <link rel="stylesheet" href="brand.css" />
 </head>
-<body>
+<body class="homepage-body">
   <header class="site-header">
-    <img src="tempicon.svg" alt="" />
+    <a class="site-brand-icon" href="viewcampaign.html" aria-label="Create a campaign">
+      <img src="tempicon.svg" alt="" />
+    </a>
     <div class="homepage-brand">
-      <h1>GM's Pub</h1>
+      <h1>GM's Brewery</h1>
     </div>
     <div class="homepage-actions">
       <button class="header-action-button" type="button">Create Campaign +</button>
       <button class="header-action-button" type="button">About</button>
     </div>
   </header>
+  <main>
+    <section class="campaigns-section" aria-labelledby="campaigns-title">
+      <h2 id="campaigns-title">Your campaigns</h2>
+      <ul class="campaign-icons" aria-label="Campaign icons"></ul>
+      <p class="campaign-empty-state">You currently have no campaigns. Click the "Create Campaign +" button to start building!</p>
+    </section>
+  </main>
 </body>
 </html>

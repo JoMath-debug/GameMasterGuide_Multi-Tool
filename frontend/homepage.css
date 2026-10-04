@@ -1,14 +1,54 @@
+.homepage-body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-color: #8fa58a;
+	color: #233228;
+}
+
+.homepage-body main {
+	flex: 1;
+	display: grid;
+	place-items: center;
+}
+
 .homepage-brand {
 	display: flex;
 	align-items: center;
 }
 
-.homepage-greeting {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
+.site-brand-icon {
+	display: inline-flex;
+	flex: 0 0 auto;
+}
+
+.campaigns-section {
+	box-sizing: border-box;
+	width: min(640px, calc(100% - 48px));
+	padding: 28px 24px;
+	border-radius: 8px;
+	background-color: var(--sage-light);
+	text-align: center;
+}
+
+.campaigns-section h2 {
+	margin: 0 0 18px;
+	font-size: 20px;
+}
+
+.campaign-icons {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 16px;
 	margin: 0;
-	white-space: nowrap;
+	padding: 0;
+	list-style: none;
+}
+
+.campaign-empty-state {
+	margin: 0;
+	color: #50554f;
 }
 
 .homepage-actions {

@@ -10,22 +10,37 @@
 </head>
 <body class="homepage-body">
   <header class="site-header">
-    <a class="site-brand-icon" href="viewcampaign.html" aria-label="Create a campaign">
+    <a class="site-brand" href="homepage.html" aria-label="GM's Pub home">
       <img src="tempicon.svg" alt="" />
+      <span class="site-brand-name">GM's Pub</span>
     </a>
-    <div class="homepage-brand">
-      <h1>GM's Brewery</h1>
-    </div>
-    <div class="homepage-actions">
-      <button class="header-action-button" type="button">Create Campaign +</button>
-      <button class="header-action-button" type="button">About</button>
-    </div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="nav-link" href="homepage.html" aria-current="page">Home</a>
+      <a class="action-button action-button-primary" href="viewcampaign.html">Create Campaign +</a>
+      <details class="about-menu">
+        <summary>About</summary>
+        <div class="about-content">
+          <h2>About GM's Pub</h2>
+          <p>Organize campaign notes, characters, creatures, maps, and other game materials.</p>
+          <p>Create a campaign, add items, then open an item to view its notes and files.</p>
+        </div>
+      </details>
+    </nav>
   </header>
-  <main>
-    <section class="campaigns-section" aria-labelledby="campaigns-title">
-      <h2 id="campaigns-title">Your campaigns</h2>
-      <ul class="campaign-icons" aria-label="Campaign icons"></ul>
-      <p class="campaign-empty-state">You currently have no campaigns. Click the "Create Campaign +" button to start building!</p>
+  <main class="homepage-main">
+    <section class="campaign-gallery" aria-labelledby="campaign-gallery-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">SECTION 1: HOMEPAGE</p>
+          <h1 id="campaign-gallery-title">Campaign Gallery</h1>
+        </div>
+        <a class="action-button action-button-primary" href="viewcampaign.html">New Campaign</a>
+      </div>
+      <ul class="campaign-list" aria-label="Your campaigns"></ul>
+      <div class="empty-state">
+        <h2>No campaigns yet</h2>
+        <p>You currently have no campaigns. Create one to start building your guide.</p>
+      </div>
     </section>
   </main>
 </body>

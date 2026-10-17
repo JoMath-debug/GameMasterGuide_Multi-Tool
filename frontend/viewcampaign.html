@@ -8,10 +8,49 @@
   <link rel="stylesheet" href="viewcampaign.css" />
   <link rel="stylesheet" href="brand.css" />
 </head>
-<body>
+<body class="campaign-page-body">
   <header class="site-header">
-    <img src="tempicon.svg" alt="" />
-    <h1>GM's Brewery</h1>
+    <a class="site-brand" href="homepage.html" aria-label="GM's Pub home">
+      <img src="tempicon.svg" alt="" />
+      <span class="site-brand-name">GM's Pub</span>
+    </a>
+    <div class="page-context">
+      <span>Campaign</span>
+      <form class="campaign-name-form" id="campaign-name-form">
+        <label class="visually-hidden" for="campaign-name">Campaign name</label>
+        <input class="campaign-name-input" id="campaign-name" name="campaign-name" type="text" maxlength="80" placeholder="[Insert Name]" required />
+        <button class="action-button action-button-primary" type="submit">Save</button>
+      </form>
+      <span class="visually-hidden" id="campaign-name-status" aria-live="polite"></span>
+    </div>
+    <nav class="site-nav" aria-label="Campaign navigation">
+      <a class="nav-link" href="homepage.html">Home</a>
+      <a class="action-button action-button-primary" href="createitem.html">New Item +</a>
+      <input class="visually-hidden" id="campaign-file" type="file" aria-label="Upload a file to this campaign" />
+      <label class="icon-button" for="campaign-file" title="Upload a campaign file">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M12 16V4m0 0L7 9m5-5 5 5M5 15v4h14v-4" />
+        </svg>
+        <span class="visually-hidden">Upload a campaign file</span>
+      </label>
+    </nav>
   </header>
+  <main class="campaign-main">
+    <section class="item-gallery" aria-labelledby="item-gallery-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">SECTION 2: CAMPAIGN PAGE</p>
+          <h2 id="item-gallery-title">Item Gallery</h2>
+        </div>
+        <a class="action-button action-button-primary" href="createitem.html">New Item</a>
+      </div>
+      <ul class="item-list" aria-label="Campaign items"></ul>
+      <div class="empty-state">
+        <h3>No items yet</h3>
+        <p>Add an item to keep campaign notes, maps, characters, and creatures together.</p>
+      </div>
+    </section>
+  </main>
+  <script src="viewcampaign.js" defer></script>
 </body>
 </html>

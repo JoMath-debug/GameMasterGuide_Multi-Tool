@@ -1,0 +1,220 @@
+.editor-page-body {
+	min-height: 100vh;
+	background: var(--sage-page);
+}
+
+.editor-header {
+	gap: 20px;
+}
+
+.editor-type-control {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-weight: 700;
+}
+
+.editor-type-control select,
+.editor-workspace input,
+.note-panel textarea {
+	box-sizing: border-box;
+	border: 1px solid var(--line);
+	border-radius: 4px;
+	background: #fff;
+	color: var(--ink);
+	font: inherit;
+}
+
+.editor-type-control select {
+	min-height: 40px;
+	padding: 6px 10px;
+}
+
+.editor-main {
+	padding: 20px;
+}
+
+.item-editor {
+	display: grid;
+	grid-template-columns: 116px minmax(0, 1fr) minmax(220px, 280px);
+	gap: 14px;
+	min-height: min(680px, calc(100vh - 170px));
+}
+
+.editor-tools,
+.editor-workspace,
+.note-panel {
+	min-width: 0;
+	padding: 16px;
+	border: 1px solid var(--line);
+	border-radius: 6px;
+	background: var(--surface);
+}
+
+.editor-tools {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 10px;
+}
+
+.tool-button {
+	display: flex;
+	min-height: 44px;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	padding: 8px;
+	border: 1px solid var(--line);
+	border-radius: 4px;
+	background: #fff;
+	color: var(--ink);
+	font: inherit;
+	text-align: center;
+	cursor: pointer;
+}
+
+.tool-button:hover {
+	background: var(--sage-light);
+}
+
+.upload-tool {
+	position: relative;
+	align-self: center;
+	box-sizing: border-box;
+	width: 44px;
+	min-height: 44px;
+	padding: 8px;
+}
+
+.upload-tool::after {
+	position: absolute;
+	z-index: 2;
+	bottom: calc(100% + 8px);
+	left: 50%;
+	transform: translate(-50%, 4px);
+	padding: 6px 9px;
+	border-radius: 4px;
+	background: var(--sage-dark);
+	color: #fff;
+	content: attr(data-tooltip);
+	font-size: 12px;
+	font-weight: 600;
+	white-space: nowrap;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 120ms ease, transform 120ms ease, visibility 120ms ease;
+}
+
+.upload-tool:hover::after,
+#item-file:focus-visible + .upload-tool::after {
+	transform: translate(-50%, 0);
+	opacity: 1;
+	visibility: visible;
+}
+
+.upload-tool svg {
+	flex: 0 0 20px;
+	width: 20px;
+	height: 20px;
+	fill: none;
+	stroke: currentColor;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 1.8;
+}
+
+#item-file:focus-visible + .upload-tool {
+	outline: 2px solid var(--accent);
+	outline-offset: 3px;
+}
+
+.editor-workspace {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.editor-workspace > label,
+.note-panel > label {
+	font-weight: 700;
+}
+
+.editor-workspace input {
+	width: 100%;
+	min-height: 42px;
+	padding: 8px 10px;
+}
+
+.workspace-preview {
+	display: grid;
+	flex: 1;
+	min-height: 300px;
+	place-items: center;
+	margin-top: 4px;
+	border: 1px dashed #aeb9aa;
+	border-radius: 4px;
+	background: #edf1eb;
+	color: var(--muted);
+}
+
+.workspace-preview p {
+	margin: 0;
+}
+
+.note-panel {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.note-panel textarea {
+	flex: 1;
+	min-height: 220px;
+	padding: 10px;
+	resize: vertical;
+}
+
+@media (max-width: 820px) {
+	.item-editor {
+		grid-template-columns: 100px minmax(0, 1fr);
+		min-height: 0;
+	}
+
+	.note-panel {
+		grid-column: 1 / -1;
+	}
+
+	.note-panel textarea {
+		min-height: 140px;
+	}
+}
+
+@media (max-width: 560px) {
+	.editor-main {
+		padding: 12px;
+	}
+
+	.item-editor {
+		grid-template-columns: 1fr;
+	}
+
+	.editor-tools {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.tool-button {
+		flex: 1 1 90px;
+	}
+
+	.editor-workspace,
+	.note-panel {
+		grid-column: auto;
+	}
+
+	.editor-type-control {
+		order: 3;
+		width: 100%;
+	}
+}

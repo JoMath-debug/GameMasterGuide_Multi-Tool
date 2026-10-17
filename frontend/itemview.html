@@ -8,10 +8,39 @@
   <link rel="stylesheet" href="itemview.css">
   <link rel="stylesheet" href="brand.css">
 </head>
-<body>
+<body class="item-view-body">
   <header class="site-header">
-    <img src="tempicon.svg" alt="">
-    <h1>GM's Pub</h1>
+    <a class="site-brand" href="homepage.html" aria-label="GM's Pub home">
+      <img src="tempicon.svg" alt="">
+      <span class="site-brand-name">GM's Pub</span>
+    </a>
+    <h1 class="page-context">Viewing <span>[Type]</span></h1>
+    <nav class="site-nav" aria-label="Item navigation">
+      <a class="action-button action-button-primary" href="createitem.html">Edit Item</a>
+      <a class="nav-link" href="viewcampaign.html">Exit</a>
+    </nav>
   </header>
+  <main class="item-view-main">
+    <section class="item-view-heading">
+      <p class="section-kicker">SECTION 4: ITEM VIEW PAGE</p>
+      <h2>Title</h2>
+    </section>
+    <div class="item-view-grid">
+      <section class="document-viewer" aria-label="Document preview">
+        <div class="viewer-toolbar">
+          <span>Document Preview</span>
+          <div class="zoom-controls" aria-label="Zoom controls">
+            <button type="button" aria-label="Zoom out">-</button>
+            <button type="button" aria-label="Zoom in">+</button>
+          </div>
+        </div>
+        <div class="document-preview">Document Preview</div>
+      </section>
+      <aside class="selected-note">
+        <h3>Selected Note</h3>
+        <p>Select a note to view its details here.</p>
+      </aside>
+    </div>
+  </main>
 </body>
 </html>

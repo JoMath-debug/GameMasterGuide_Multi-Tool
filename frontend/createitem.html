@@ -3,15 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Game Master Guide | Items</title>
+  <title>Game Master Guide | Create Item</title>
   <link rel="icon" type="image/svg+xml" href="tempicon.svg" />
   <link rel="stylesheet" href="createitem.css" />
   <link rel="stylesheet" href="brand.css" />
 </head>
-<body>
-  <header class="site-header">
-    <img src="tempicon.svg" alt="" />
-    <h1>GM's Brewery</h1>
+<body class="editor-page-body">
+  <header class="site-header editor-header">
+    <a class="site-brand" href="homepage.html" aria-label="GM's Pub home">
+      <img src="tempicon.svg" alt="" />
+      <span class="site-brand-name">GM's Pub</span>
+    </a>
+    <label class="editor-type-control">Edit
+      <select name="item-type" aria-label="Item type">
+        <option>Map</option>
+        <option>Item</option>
+        <option>NPC/PC</option>
+        <option>Creature</option>
+        <option>Misc</option>
+      </select>
+    </label>
+    <nav class="site-nav" aria-label="Editor actions">
+      <button class="action-button action-button-primary" type="button">Save</button>
+      <a class="action-button action-button-secondary" href="viewcampaign.html">Exit</a>
+    </nav>
   </header>
+  <main class="editor-main">
+    <form class="item-editor">
+      <aside class="editor-tools" aria-label="Item tools">
+        <input class="visually-hidden" id="item-file" type="file" aria-label="Upload an item file" />
+        <label class="tool-button upload-tool" for="item-file" data-tooltip="Upload File">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 16V4m0 0L7 9m5-5 5 5M5 15v4h14v-4" /></svg>
+          <span class="visually-hidden">Upload File</span>
+        </label>
+        <button class="tool-button" type="button">Add BP</button>
+        <button class="tool-button" type="button">Edit BP</button>
+      </aside>
+      <section class="editor-workspace" aria-label="File preview and workspace">
+        <label for="item-title">Title</label>
+        <input id="item-title" name="title" type="text" placeholder="Enter an item title" />
+        <div class="workspace-preview">
+          <p>File Preview / Workspace</p>
+        </div>
+      </section>
+      <aside class="note-panel">
+        <label for="item-note">Create Note</label>
+        <textarea id="item-note" name="note" placeholder="Write a note for this item"></textarea>
+      </aside>
+    </form>
+  </main>
 </body>
 </html>
